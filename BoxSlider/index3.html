@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>jQuery内容滚动/滑动插件BoxSlider演示-回调函数</title>
+<style>
+.wrap { position: relative; width: 574px; margin: 100px auto;}
+#jqhtml { overflow: hidden;}
+.box-slider .box-slider-seta-left { float: left; width: 25px; height: 200px; background: url(img/seta-left.png) no-repeat center center #674172;}
+.box-slider .box-slider-seta-right { float: right; width: 25px; height: 200px; background: url(img/seta-right.png) no-repeat center center #674172;}
+.box-slider .box-slider-content { position: absolute; left: 42px; width: 490px; overflow: hidden;}
+.box-slider .box-slider-move { position: relative; top: 0; left: 0; width: 10000px;}
+.box-slider .item { float: left; width: 160px; margin-left: 5px;}
+.box-slider .item.first { margin-left: 0;}
+.box-slider .item span { display: block; height: 200px; background-color: #aea8d3;}
+.box-slider .last-item span { background-color: red; text-align: center; font-family: Arial, Helvetica, sans-serif; color: #fff;}
+.box-slider-move { overflow: hidden; *zoom:1;}
+</style>
+</head>
+
+<body>
+<h1>回调函数</h1>
+
+<div class="wrap">
+	<div class="box-slider" id="jqhtml">
+		<a href="javascript:" class="box-slider-seta-left"></a>
+		<div class="box-slider-content">
+			<div class="box-slider-move">
+				<div class="item first"><span></span></div>
+				<div class="item"><span></span></div>
+				<div class="item"><span></span></div>
+				<div class="item"><span></span></div>
+				<div class="item"><span></span></div>
+				<div class="item"><span></span></div>
+				<div class="item"><span></span></div>
+				<div class="item"><span></span></div>
+				<div class="item"><span></span></div>
+				<div class="item last-item"><span></span></div>
+			</div>
+		</div>
+		<a href="javascript:" class="box-slider-seta-right"></a>
+	</div>
+</div>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery-boxSlider.js"></script>
+<script>
+$(function() {
+	$("#jqhtml").boxSlider({
+		orientation: 'horizontal',
+		speed: 3,
+		added: function() {
+			alert('初始化完成')
+		}
+	});
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<!-- 以下信息与演示无关，可不必理会 -->
+<style>
+body { margin: 0; border-left: 200px solid #ccc;}
+
+h1 { margin: 40px 0; font: 32px "Microsoft Yahei"; text-align: center;}
+
+.menu { position: absolute; left: 0; top: 0; bottom: 0; width: 200px; padding-top: 100px; font-family: Consolas,arial,"宋体"; background-color: #ccc;}
+.menu a { display: block; height: 40px; margin: 0 0 1px 2px; padding-left: 10px; line-height: 40px; font-size: 14px; color: #333; text-decoration: none;}
+.menu a:hover { background-color: #eee;}
+.menu .cur { color: #000; background-color: #fff !important;}
+
+.vad { margin: 50px 0 10px; font-family: Consolas,arial,宋体,sans-serif; text-align:center;}
+.vad a { display: inline-block; height: 36px; line-height: 36px; margin: 0 5px; padding: 0 50px; font-size: 14px; text-align:center; color:#eee; text-decoration: none; background-color: #222;}
+.vad a:hover { color: #fff; background-color: #000;}
+.thead { width: 728px; height: 90px; margin: 0 auto; border-bottom: 40px solid transparent;}
+</style>
+
+<div class="menu">
+	<a href="index.html">1、垂直/竖向</a>
+	<a href="index2.html">2、水平/横向</a>
+	<a class="cur" href="index3.html">3、回调函数</a>
+</div>
+
+</body>
+</html>
